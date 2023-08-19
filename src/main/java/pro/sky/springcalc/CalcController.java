@@ -1,22 +1,34 @@
 package pro.sky.springcalc;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/calculator")
 public class CalcController {
     private final CalcService calcService;
     public CalcController(CalcService calcService){
         this.calcService = calcService;
     }
-//    private CalcService calcService = new CalcService();
-    @GetMapping
-    public String hello(){
-        return calcService.hello();
+    @RequestMapping(path = "/")
+    public String calculator() {
+        return calcService.calculator();
     }
-    @GetMapping(path = "/hello")
-    public String answerHello(@RequestParam("name") String userName){
-        return calcService.answerHello(userName);
+    @RequestMapping(path = "/plus")
+    public String calculatorPlus(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return calcService.calculatorPlus(num1,num2);
+    }
+    @RequestMapping(path = "/minus")
+    public String calculatorMinus(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return calcService.calculatorMinus (num1,num2);
+    }
+    @RequestMapping(path = "/multiply")
+    public String calculatorMultiply(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return calcService.calculatorMultiply(num1,num2);
+    }
+    @RequestMapping(path = "/divide")
+    public String calculatorDivide(@RequestParam Double num1, @RequestParam Double num2) {
+        return calcService.calculatorDivide(num1,num2);
     }
 }

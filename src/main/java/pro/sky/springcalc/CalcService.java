@@ -1,14 +1,9 @@
 package pro.sky.springcalc;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class CalcService {
-    public String hello(){
-        return "hello";
-    }
-
-    public String answerHello(String userName){
-        return "<b>hello</b> " + userName;
-    }
+public interface CalcService {
+    String calculator();
+    String calculatorPlus(Integer num1, Integer num2);
+    String calculatorMinus(Integer num1, Integer num2);
+    String calculatorMultiply(Integer num1, Integer num2);
+    String calculatorDivide(Double num1, Double num2);
 }
