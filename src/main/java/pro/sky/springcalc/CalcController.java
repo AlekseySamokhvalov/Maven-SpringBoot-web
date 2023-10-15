@@ -1,5 +1,6 @@
 package pro.sky.springcalc;
 
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,9 @@ public class CalcController {
         return calcService.calculatorMultiply(num1,num2);
     }
     @RequestMapping(path = "/divide")
-    public String calculatorDivide(@RequestParam Double num1, @RequestParam Double num2) {
+    public String calculatorDivide(@RequestParam Integer num1, @RequestParam Integer num2) {
         return calcService.calculatorDivide(num1,num2);
     }
 }
+
+
