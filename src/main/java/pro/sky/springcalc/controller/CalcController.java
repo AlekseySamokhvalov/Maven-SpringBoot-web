@@ -1,9 +1,9 @@
-package pro.sky.springcalc;
+package pro.sky.springcalc.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.springcalc.service.CalcService;
 
 @RestController
 @RequestMapping("/calculator")

@@ -1,4 +1,4 @@
-package pro.sky.springcalc;
+package pro.sky.springcalc.service;
 
 public interface CalcService {
     String calculator();
